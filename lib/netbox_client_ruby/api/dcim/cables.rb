@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'netbox_client_ruby/entities'
+require 'netbox_client_ruby/api/dcim/cable'
+
 module NetboxClientRuby
   module DCIM
     class Cables

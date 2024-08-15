@@ -1,14 +1,12 @@
-# frozen_string_literal: true
-
 require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/rear_port'
+require 'netbox_client_ruby/api/dcim/cable_termination'
 
 module NetboxClientRuby
   module DCIM
-    class RearPorts
+    class CableTerminations
       include Entities
 
-      path 'dcim/rear-ports/'
+      path 'dcim/cable-terminations.json'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator
@@ -16,7 +14,7 @@ module NetboxClientRuby
       private
 
       def entity_creator(raw_entity)
-        RearPort.new raw_entity['id']
+        CableTermination.new raw_entity['id']
       end
     end
   end

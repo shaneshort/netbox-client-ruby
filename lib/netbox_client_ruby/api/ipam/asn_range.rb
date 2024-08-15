@@ -1,4 +1,5 @@
 require 'netbox_client_ruby/entity'
+require 'netbox_client_ruby/api/ipam/asn'
 require 'netbox_client_ruby/api/tenancy/tenant'
 require 'netbox_client_ruby/api/extras/tag'
 
@@ -17,6 +18,16 @@ module NetboxClientRuby
         tenant: proc { |raw_data| Tenancy::Tenant.new raw_data['id'] },
         tags: proc { |raw_data| Extras::Tag.new raw_data['id'] },
       )
+
+      def available_asns
+        request_path = replace_path_variables_in 'ipam/asn-ranges/:id/available-asns/'
+        response = connection.get request_path
+        response.body.collect do |obj|
+          a = Asn.new
+          a.data = obj
+          a
+        end
+      end
     end
   end
 end

@@ -1,3 +1,7 @@
+require 'netbox_client_ruby/api/ipam/asn'
+require 'netbox_client_ruby/api/ipam/asns'
+require 'netbox_client_ruby/api/ipam/asn_range'
+require 'netbox_client_ruby/api/ipam/asn_ranges'
 require 'netbox_client_ruby/api/ipam/aggregate'
 require 'netbox_client_ruby/api/ipam/aggregates'
 require 'netbox_client_ruby/api/ipam/ip_addresses'
@@ -24,6 +28,8 @@ module NetboxClientRuby
   module IPAM
     {
       aggregates: Aggregates,
+      asns: Asns,
+      asn_ranges: AsnRanges,
       ip_addresses: IpAddresses,
       ip_ranges: IpRanges,
       prefixes: Prefixes,
@@ -40,6 +46,8 @@ module NetboxClientRuby
 
     {
       aggregate: Aggregate,
+      asn: Asn,
+      asn_range: AsnRange,
       ip_address: IpAddress,
       ip_range: IpRange,
       prefix: Prefix,

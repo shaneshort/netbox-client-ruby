@@ -1,3 +1,7 @@
+require 'netbox_client_ruby/api/dcim/cable'
+require 'netbox_client_ruby/api/dcim/cables'
+require 'netbox_client_ruby/api/dcim/cable_termination'
+require 'netbox_client_ruby/api/dcim/cable_terminations'
 require 'netbox_client_ruby/api/dcim/console_connection'
 require 'netbox_client_ruby/api/dcim/console_connections'
 require 'netbox_client_ruby/api/dcim/console_port'
@@ -10,6 +14,8 @@ require 'netbox_client_ruby/api/dcim/device_role'
 require 'netbox_client_ruby/api/dcim/device_roles'
 require 'netbox_client_ruby/api/dcim/device_type'
 require 'netbox_client_ruby/api/dcim/device_types'
+require 'netbox_client_ruby/api/dcim/front_port'
+require 'netbox_client_ruby/api/dcim/front_ports'
 require 'netbox_client_ruby/api/dcim/interface'
 require 'netbox_client_ruby/api/dcim/interface_connection'
 require 'netbox_client_ruby/api/dcim/interface_connections'
@@ -34,6 +40,8 @@ require 'netbox_client_ruby/api/dcim/rack_reservations'
 require 'netbox_client_ruby/api/dcim/rack_role'
 require 'netbox_client_ruby/api/dcim/rack_roles'
 require 'netbox_client_ruby/api/dcim/racks'
+require 'netbox_client_ruby/api/dcim/rear_port'
+require 'netbox_client_ruby/api/dcim/rear_ports'
 require 'netbox_client_ruby/api/dcim/region'
 require 'netbox_client_ruby/api/dcim/regions'
 require 'netbox_client_ruby/api/dcim/site'
@@ -45,12 +53,15 @@ require 'netbox_client_ruby/communication'
 module NetboxClientRuby
   module DCIM
     {
+      cables: Cables,
+      cable_terminations: CableTerminations,
       console_connections: ConsoleConnections,
       console_ports: ConsolePorts,
       console_server_ports: ConsoleServerPorts,
       devices: Devices,
       device_roles: DeviceRoles,
       device_types: DeviceTypes,
+      front_ports: FrontPorts,
       interfaces: Interfaces,
       interface_connections: InterfaceConnections,
       inventory_items: InventoryItems,
@@ -63,6 +74,7 @@ module NetboxClientRuby
       rack_groups: RackGroups,
       rack_reservations: RackReservations,
       rack_roles: RackRoles,
+      rear_ports: RearPorts,
       regions: Regions,
       sites: Sites,
       virtual_chassis_list: VirtualChassisList
@@ -72,12 +84,15 @@ module NetboxClientRuby
     end
 
     {
+      cable: Cable,
+      cable_termination: CableTermination,
       console_connection: ConsoleConnection,
       console_port: ConsolePort,
       console_server_port: ConsoleServerPort,
       device: Device,
       device_role: DeviceRole,
       device_type: DeviceType,
+      front_port: FrontPort,
       interface: Interface,
       interface_connection: InterfaceConnection,
       inventory_item: InventoryItem,
@@ -90,6 +105,7 @@ module NetboxClientRuby
       rack_group: RackGroup,
       rack_reservation: RackReservation,
       rack_role: RackRole,
+      rear_port: RearPort,
       region: Region,
       site: Site,
       virtual_chassis: VirtualChassis

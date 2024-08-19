@@ -5,6 +5,7 @@ require 'netbox_client_ruby/api/ipam'
 require 'netbox_client_ruby/api/secrets'
 require 'netbox_client_ruby/api/tenancy'
 require 'netbox_client_ruby/api/virtualization'
+require 'netbox_client_ruby/api/vpn'
 require 'netbox_client_ruby/communication'
 
 module NetboxClientRuby

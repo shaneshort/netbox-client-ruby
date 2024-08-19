@@ -36,4 +36,9 @@ module NetboxClientRuby
   def self.virtualization
     NetboxClientRuby::Virtualization
   end
+
+  def self.vpn
+    NetboxClientRuby::VPN
+  end
+
 end

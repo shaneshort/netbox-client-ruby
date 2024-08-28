@@ -14,7 +14,7 @@ module NetboxClientRuby
       private
 
       def entity_creator(raw_entity)
-        L2vpn_terminations.new raw_entity['id']
+        L2VPNTermination.new raw_entity['id']
       end
     end
   end

@@ -26,6 +26,29 @@ module NetboxClientRuby
         prefix: proc { |raw_data| IPAddress.parse raw_data }
       )
       readonly_fields :display_name
+
+      def available_prefixes(prefix_length = 24)
+        request_path = replace_path_variables_in 'ipam/prefixes/:id/available-prefixes/'
+        response = connection.get request_path, { prefix_length: prefix_length }
+        response.body.collect do |object|
+          prefix = Prefix.new(object['id'])
+          prefix.data = object
+          prefix
+        end
+      end
+
+      def next_available_prefix(prefix_length: 24, count: 1)
+        request_path = replace_path_variables_in 'ipam/prefixes/:id/available-prefixes/'
+        prefixes = []
+        count.times do
+          response = connection.post request_path, { prefix_length: prefix_length }
+          prefix = Prefix.new(response.body['id'])
+          prefix.data = response.body
+          prefixes << prefix
+        end
+
+        prefixes.count == 1 ? prefixes.first : prefixes
+      end
     end
 
     class PrefixStatus

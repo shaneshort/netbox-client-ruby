@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'netbox-client-ruby'
-  spec.version       = `git describe --tags --match="v[0-9]*" --abbrev=0`.strip.delete_prefix("v")
+  spec.version       = `git describe --tags --match="v[0-9]*" --abbrev=0 2> /dev/null`.strip.delete_prefix("v")
 
   spec.summary       = 'A read/write client for Netbox v2.'
   spec.homepage      = 'https://github.com/ninech/netbox-client-ruby'

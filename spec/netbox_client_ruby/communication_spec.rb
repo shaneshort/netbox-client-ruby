@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'json'
 
-describe NetboxClientRuby::Communication do
+RSpec.describe NetboxClientRuby::Communication do
   let(:faraday) { double('Faraday') }
   let(:url) { '/api' }
   let(:response) { double('response', body: response_body, status: 200) }

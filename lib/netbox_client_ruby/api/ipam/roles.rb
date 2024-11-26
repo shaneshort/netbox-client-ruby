@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/ipam/role'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module IPAM
     class Roles
       include Entities
 
-      path 'ipam/roles.json'
+      path 'ipam/roles/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

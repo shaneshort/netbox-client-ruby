@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/virtual_chassis'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class VirtualChassisList
       include Entities
 
-      path 'dcim/virtual-chassis.json'
+      path 'dcim/virtual-chassis/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

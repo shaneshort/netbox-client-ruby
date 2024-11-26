@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/platform'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class Platforms
       include Entities
 
-      path 'dcim/platforms.json'
+      path 'dcim/platforms/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

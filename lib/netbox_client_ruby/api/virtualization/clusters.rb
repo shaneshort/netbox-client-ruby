@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/virtualization/cluster'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Virtualization
     class Clusters
       include Entities
 
-      path 'virtualization/clusters.json'
+      path 'virtualization/clusters/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

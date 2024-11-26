@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::DCIM::InventoryItems, faraday_stub: true do
+RSpec.describe NetboxClientRuby::DCIM::InventoryItems, faraday_stub: true do
   let(:expected_length) { 1 }
   let(:singular_type) { NetboxClientRuby::DCIM::InventoryItem }
 
   let(:response) { File.read('spec/fixtures/dcim/inventory-items.json') }
-  let(:request_url) { '/api/dcim/inventory-items.json' }
+  let(:request_url) { '/api/dcim/inventory-items/' }
   let(:request_url_params) do
     { limit: NetboxClientRuby.config.netbox.pagination.default_limit }
   end

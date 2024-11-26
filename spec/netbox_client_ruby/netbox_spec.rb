@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby do
+RSpec.describe NetboxClientRuby do
   it 'is configurable' do
     NetboxClientRuby.configure do |config|
       config.netbox.auth.token = 'my_very_special_token'

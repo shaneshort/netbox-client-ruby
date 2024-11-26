@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/interface'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class PowerOutlets
       include Entities
 
-      path 'dcim/power-outlets.json'
+      path 'dcim/power-outlets/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

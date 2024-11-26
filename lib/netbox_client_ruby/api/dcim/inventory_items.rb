@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/inventory_item'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class InventoryItems
       include Entities
 
-      path 'dcim/inventory-items.json'
+      path 'dcim/inventory-items/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

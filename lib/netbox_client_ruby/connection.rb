@@ -1,22 +1,4 @@
-require 'faraday'
-require 'faraday/detailed_logger'
-require 'netbox_client_ruby/error'
-
-if Faraday::VERSION < '2'
-  begin
-    require 'faraday_middleware'
-  rescue LoadError => e
-    message = <<~MSG
-      For the current version of Faraday (#{Faraday::VERSION}), "faraday_middleware"
-      is a required peer dependency of "netbox-client-ruby". Please install
-      "faraday_middleware" separately OR upgrade to Faraday 2, in which case,
-      "faraday_middleware" is not needed to work with "netbox-client-ruby".
-
-      #{e.message}
-    MSG
-    raise NetboxClientRuby::Error, message
-  end
-end
+# frozen_string_literal: true
 
 module NetboxClientRuby
   class Connection

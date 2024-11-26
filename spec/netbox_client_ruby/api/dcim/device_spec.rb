@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::DCIM::Device, faraday_stub: true do
+RSpec.describe NetboxClientRuby::DCIM::Device, faraday_stub: true do
   let(:entity_id) { 2 }
   let(:expected_name) { 'device2' }
   let(:sut) { NetboxClientRuby::DCIM::Device }

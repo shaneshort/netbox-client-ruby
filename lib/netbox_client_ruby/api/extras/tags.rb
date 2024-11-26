@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/extras/tag'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Extras
     class Tags
       include Entities
 
-      path 'extras/tags.json'
+      path 'extras/tags/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::DCIM::Interfaces, faraday_stub: true do
+RSpec.describe NetboxClientRuby::DCIM::Interfaces, faraday_stub: true do
   let(:expected_length) { 3 }
   let(:singular_type) { NetboxClientRuby::DCIM::Interface }
 
   let(:response) { File.read('spec/fixtures/dcim/interfaces.json') }
-  let(:request_url) { '/api/dcim/interfaces.json' }
+  let(:request_url) { '/api/dcim/interfaces/' }
   let(:request_url_params) do
     { limit: NetboxClientRuby.config.netbox.pagination.default_limit }
   end

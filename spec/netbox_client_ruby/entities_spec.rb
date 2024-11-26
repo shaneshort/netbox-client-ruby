@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'ostruct'
 require 'uri'
 
-describe NetboxClientRuby::Entities, faraday_stub: true do
+RSpec.describe NetboxClientRuby::Entities, faraday_stub: true do
   class TestEntities
     include NetboxClientRuby::Entities
 

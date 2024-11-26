@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/interface_connection'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class InterfaceConnections
       include Entities
 
-      path 'dcim/interface-connections.json'
+      path 'dcim/interface-connections/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/ipam/vrf'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module IPAM
     class Vrfs
       include Entities
 
-      path 'ipam/vrfs.json'
+      path 'ipam/vrfs/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

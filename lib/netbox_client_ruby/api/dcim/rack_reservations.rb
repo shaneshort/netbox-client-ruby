@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/rack_reservation'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class RackReservations
       include Entities
 
-      path 'dcim/rack-reservations.json'
+      path 'dcim/rack-reservations/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

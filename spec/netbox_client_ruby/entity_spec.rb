@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::Entity, faraday_stub: true do
+RSpec.describe NetboxClientRuby::Entity, faraday_stub: true do
   class TestEntity
     include NetboxClientRuby::Entity
 

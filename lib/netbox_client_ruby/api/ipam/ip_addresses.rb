@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/ipam/ip_address'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module IPAM
     class IpAddresses
       include Entities
 
-      path 'ipam/ip-addresses.json'
+      path 'ipam/ip-addresses/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

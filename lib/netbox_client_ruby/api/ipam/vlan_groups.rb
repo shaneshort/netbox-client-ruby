@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/ipam/vlan_group'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module IPAM
     class VlanGroups
       include Entities
 
-      path 'ipam/vlan-groups.json'
+      path 'ipam/vlan-groups/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

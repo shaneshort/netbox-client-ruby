@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/extras/journal_entry'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Extras
     class JournalEntries
       include Entities
 
-      path 'extras/journal-entries.json'
+      path 'extras/journal-entries/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

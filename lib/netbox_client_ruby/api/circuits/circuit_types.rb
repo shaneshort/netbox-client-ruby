@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/circuits/circuit_type'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Circuits
     class CircuitTypes
       include Entities
 
-      path 'circuits/circuit-types.json'
+      path 'circuits/circuit-types/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

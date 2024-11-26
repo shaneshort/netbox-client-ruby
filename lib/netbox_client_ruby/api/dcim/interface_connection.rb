@@ -1,5 +1,4 @@
-require 'netbox_client_ruby/entity'
-require 'netbox_client_ruby/api/dcim/interface'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM

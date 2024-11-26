@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/rack_role'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class RackRoles
       include Entities
 
-      path 'dcim/rack-roles.json'
+      path 'dcim/rack-roles/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

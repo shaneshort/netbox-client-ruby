@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::DCIM::Platform, faraday_stub: true do
+RSpec.describe NetboxClientRuby::DCIM::Platform, faraday_stub: true do
   let(:entity_id) { 1 }
   let(:expected_name) { 'platform1' }
   let(:sut) { NetboxClientRuby::DCIM::Platform }

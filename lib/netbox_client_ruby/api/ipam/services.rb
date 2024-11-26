@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/ipam/service'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module IPAM
     class Services
       include Entities
 
-      path 'ipam/services.json'
+      path 'ipam/services/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

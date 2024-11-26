@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::IPAM::Rir, faraday_stub: true do
+RSpec.describe NetboxClientRuby::IPAM::Rir, faraday_stub: true do
   let(:expected_name) { 'rir1' }
   let(:class_under_test) { NetboxClientRuby::IPAM::Rir }
   let(:base_url) { '/api/ipam/rirs/' }

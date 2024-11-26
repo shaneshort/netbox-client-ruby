@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/rack_group'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class RackGroups
       include Entities
 
-      path 'dcim/rack-groups.json'
+      path 'dcim/rack-groups/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

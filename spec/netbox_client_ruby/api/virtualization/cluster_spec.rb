@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::Virtualization::Cluster, faraday_stub: true do
+RSpec.describe NetboxClientRuby::Virtualization::Cluster, faraday_stub: true do
   let(:entity_id) { 1 }
   let(:expected_name) { '1' }
   let(:base_url) { '/api/virtualization/clusters/' }

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::IPAM::Vlan, faraday_stub: true do
+RSpec.describe NetboxClientRuby::IPAM::Vlan, faraday_stub: true do
   let(:expected_name) { 'vlan_1' }
   let(:class_under_test) { NetboxClientRuby::IPAM::Vlan }
   let(:base_url) { '/api/ipam/vlans/' }

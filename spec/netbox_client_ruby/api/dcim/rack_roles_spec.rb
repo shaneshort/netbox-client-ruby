@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::DCIM::RackRoles, faraday_stub: true do
+RSpec.describe NetboxClientRuby::DCIM::RackRoles, faraday_stub: true do
   let(:expected_length) { 2 }
   let(:singular_type) { NetboxClientRuby::DCIM::RackRole }
 
   let(:response) { File.read('spec/fixtures/dcim/rack-roles.json') }
-  let(:request_url) { '/api/dcim/rack-roles.json' }
+  let(:request_url) { '/api/dcim/rack-roles/' }
   let(:request_url_params) do
     { limit: NetboxClientRuby.config.netbox.pagination.default_limit }
   end

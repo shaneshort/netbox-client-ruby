@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::IPAM::Vrf, faraday_stub: true do
+RSpec.describe NetboxClientRuby::IPAM::Vrf, faraday_stub: true do
   let(:expected_name) { 'vrf1' }
   let(:class_under_test) { NetboxClientRuby::IPAM::Vrf }
   let(:base_url) { '/api/ipam/vrfs/' }

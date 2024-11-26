@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/circuits/circuit_termination'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Circuits
     class CircuitTerminations
       include Entities
 
-      path 'circuits/circuit-terminations.json'
+      path 'circuits/circuit-terminations/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/ipam/prefix'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module IPAM
     class Prefixes
       include Entities
 
-      path 'ipam/prefixes.json'
+      path 'ipam/prefixes/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

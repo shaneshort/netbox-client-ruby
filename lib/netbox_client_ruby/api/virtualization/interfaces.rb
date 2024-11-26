@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/virtualization/interface'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Virtualization
     class Interfaces
       include Entities
 
-      path 'virtualization/interfaces.json'
+      path 'virtualization/interfaces/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

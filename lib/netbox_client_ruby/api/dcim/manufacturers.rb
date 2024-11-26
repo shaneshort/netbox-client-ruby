@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/manufacturer'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class Manufacturers
       include Entities
 
-      path 'dcim/manufacturers.json'
+      path 'dcim/manufacturers/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

@@ -1,7 +1,4 @@
-require 'netbox_client_ruby/entity'
-require 'netbox_client_ruby/api/circuits/circuit_type'
-require 'netbox_client_ruby/api/circuits/provider'
-require 'netbox_client_ruby/api/tenancy/tenant'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Circuits

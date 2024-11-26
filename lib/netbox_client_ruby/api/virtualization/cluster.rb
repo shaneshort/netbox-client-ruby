@@ -1,7 +1,4 @@
-require 'netbox_client_ruby/entity'
-require 'netbox_client_ruby/api/virtualization/cluster_group'
-require 'netbox_client_ruby/api/virtualization/cluster_type'
-require 'netbox_client_ruby/api/dcim/site'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Virtualization

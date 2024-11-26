@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::IPAM::Aggregates, faraday_stub: true do
+RSpec.describe NetboxClientRuby::IPAM::Aggregates, faraday_stub: true do
   let(:expected_length) { 1 }
   let(:expected_singular_type) { NetboxClientRuby::IPAM::Aggregate }
 
   let(:response) { File.read('spec/fixtures/ipam/aggregates.json') }
-  let(:request_url) { '/api/ipam/aggregates.json' }
+  let(:request_url) { '/api/ipam/aggregates/' }
   let(:request_url_params) do
     { limit: NetboxClientRuby.config.netbox.pagination.default_limit }
   end

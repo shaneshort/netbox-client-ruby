@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/tenancy/tenant_group'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Tenancy
     class TenantGroups
       include Entities
 
-      path 'tenancy/tenant-groups.json'
+      path 'tenancy/tenant-groups/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

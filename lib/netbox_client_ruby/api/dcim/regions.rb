@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/region'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class Regions
       include Entities
 
-      path 'dcim/regions.json'
+      path 'dcim/regions/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

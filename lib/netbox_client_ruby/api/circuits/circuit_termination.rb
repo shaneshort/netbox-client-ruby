@@ -1,7 +1,4 @@
-require 'netbox_client_ruby/entity'
-require 'netbox_client_ruby/api/circuits/circuit'
-require 'netbox_client_ruby/api/dcim/site'
-require 'netbox_client_ruby/api/dcim/interface'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Circuits

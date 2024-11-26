@@ -1,14 +1,4 @@
-require 'netbox_client_ruby/api/virtualization/cluster_group'
-require 'netbox_client_ruby/api/virtualization/cluster_groups'
-require 'netbox_client_ruby/api/virtualization/cluster_type'
-require 'netbox_client_ruby/api/virtualization/cluster_types'
-require 'netbox_client_ruby/api/virtualization/cluster'
-require 'netbox_client_ruby/api/virtualization/clusters'
-require 'netbox_client_ruby/api/virtualization/interface'
-require 'netbox_client_ruby/api/virtualization/interfaces'
-require 'netbox_client_ruby/api/virtualization/virtual_machine'
-require 'netbox_client_ruby/api/virtualization/virtual_machines'
-require 'netbox_client_ruby/communication'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Virtualization

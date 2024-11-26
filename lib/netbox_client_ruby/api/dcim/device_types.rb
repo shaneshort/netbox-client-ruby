@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/device_type'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class DeviceTypes
       include Entities
 
-      path 'dcim/device-types.json'
+      path 'dcim/device-types/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

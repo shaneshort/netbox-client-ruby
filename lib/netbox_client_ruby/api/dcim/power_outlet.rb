@@ -1,6 +1,4 @@
-require 'netbox_client_ruby/entity'
-require 'netbox_client_ruby/api/dcim/device'
-require 'netbox_client_ruby/api/dcim/power_port'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM

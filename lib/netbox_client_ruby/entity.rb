@@ -1,5 +1,4 @@
-require 'netbox_client_ruby/communication'
-require 'netbox_client_ruby/error'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Entity
@@ -38,7 +37,7 @@ module NetboxClientRuby
         end
 
         @id_fields.keys.each do |field|
-          define_method(field) { instance_variable_get "@#{field}" }
+          define_method(field) { instance_variable_get :"@#{field}" }
         end
 
         @id_fields
@@ -108,13 +107,13 @@ module NetboxClientRuby
       return self if given_values.nil?
 
       if id_fields.count == 1 && !given_values.is_a?(Hash)
-        instance_variable_set("@#{id_fields.keys.first}", given_values)
+        instance_variable_set(:"@#{id_fields.keys.first}", given_values)
         return self
       end
 
       given_values.each do |field, value|
         if id_fields.key? field.to_s
-          instance_variable_set "@#{field}", value
+          instance_variable_set :"@#{field}", value
         else
           # via method_missing, because it checks for readonly fields, etc.
           method_missing("#{field}=", value)
@@ -164,7 +163,7 @@ module NetboxClientRuby
         s_attribute = attribute.to_s
         next if readonly_fields.include? s_attribute
 
-        sym_attr_writer = "#{attribute}=".to_sym
+        sym_attr_writer = :"#{attribute}="
         if methods.include?(sym_attr_writer)
           public_send(sym_attr_writer, values)
         else
@@ -197,7 +196,7 @@ module NetboxClientRuby
 
       if name.end_with?('=')
         is_readonly_field = readonly_fields.include?(name[0..-2])
-        is_instance_variable = instance_variables.include?("@#{name[0..-2]}".to_sym)
+        is_instance_variable = instance_variables.include?(:"@#{name[0..-2]}")
         not_this_classes_business = is_readonly_field || is_instance_variable
 
         return super if not_this_classes_business
@@ -305,7 +304,7 @@ module NetboxClientRuby
     end
 
     def replace_path_variables_in(path)
-      interpreted_path = path.clone
+      interpreted_path = path.dup
       path.scan(/:([a-zA-Z_][a-zA-Z0-9_]+[!?=]?)/) do |match, *|
         path_variable_value = send(match)
         return interpreted_path.gsub! ":#{match}", path_variable_value.to_s unless path_variable_value.nil?
@@ -328,12 +327,12 @@ module NetboxClientRuby
           raise LocalError, "Can't find the id field '#{id_field}' in the received data."
         end
 
-        instance_variable_set("@#{id_attr}", data[id_field])
+        instance_variable_set(:"@#{id_attr}", data[id_field])
       end
     end
 
     def ids_set?
-      id_fields.map { |id_attr, _| instance_variable_get("@#{id_attr}") }.all?
+      id_fields.map { |id_attr, _| instance_variable_get(:"@#{id_attr}") }.all?
     end
   end
 end

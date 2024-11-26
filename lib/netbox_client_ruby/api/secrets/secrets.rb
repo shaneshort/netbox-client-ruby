@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/secrets/secret'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Secrets
     class Secrets
       include Entities
 
-      path 'secrets/secrets.json'
+      path 'secrets/secrets/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

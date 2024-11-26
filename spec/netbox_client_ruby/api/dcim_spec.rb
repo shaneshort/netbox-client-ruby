@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 module NetboxClientRuby
   module DCIM
-    describe DCIM do
+    RSpec.describe DCIM do
       {
         console_connections: ConsoleConnections,
         console_ports: ConsolePorts,

@@ -1,5 +1,4 @@
-require 'netbox_client_ruby/error'
-require 'netbox_client_ruby/connection'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Communication
@@ -23,8 +22,8 @@ module NetboxClientRuby
         variable_name = sanitize_variable_name(k)
         variable_name = "_#{variable_name}" if objectified_instance.methods.map(&:to_s).include?(variable_name)
 
-        objectified_instance.instance_variable_set("@#{variable_name}", v)
-        objectified_class.send(:define_method, variable_name, proc { instance_variable_get("@#{variable_name}") })
+        objectified_instance.instance_variable_set(:"@#{variable_name}", v)
+        objectified_class.send(:define_method, variable_name, proc { instance_variable_get(:"@#{variable_name}") })
       end
       objectified_instance
     end

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::DCIM::Regions, faraday_stub: true do
+RSpec.describe NetboxClientRuby::DCIM::Regions, faraday_stub: true do
   let(:response) { File.read('spec/fixtures/dcim/regions.json') }
-  let(:request_url) { '/api/dcim/regions.json' }
+  let(:request_url) { '/api/dcim/regions/' }
   let(:request_url_params) do
     { limit: NetboxClientRuby.config.netbox.pagination.default_limit }
   end

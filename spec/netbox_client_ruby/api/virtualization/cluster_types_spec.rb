@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::Virtualization::ClusterTypes, faraday_stub: true do
+RSpec.describe NetboxClientRuby::Virtualization::ClusterTypes, faraday_stub: true do
   let(:expected_length) { 1 }
   let(:singular_type) { NetboxClientRuby::Virtualization::ClusterType }
 
   let(:response) { File.read('spec/fixtures/virtualization/cluster-types.json') }
-  let(:request_url) { '/api/virtualization/cluster-types.json' }
+  let(:request_url) { '/api/virtualization/cluster-types/' }
   let(:request_url_params) do
     { limit: NetboxClientRuby.config.netbox.pagination.default_limit }
   end

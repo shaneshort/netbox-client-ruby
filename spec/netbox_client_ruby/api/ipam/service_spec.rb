@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::IPAM::Service, faraday_stub: true do
+RSpec.describe NetboxClientRuby::IPAM::Service, faraday_stub: true do
   let(:expected_name) { 'Service 0' }
   let(:base_url) { '/api/ipam/services/' }
   let(:response) { File.read("spec/fixtures/ipam/service_#{entity_id}.json") }

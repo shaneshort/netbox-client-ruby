@@ -1,8 +1,4 @@
-require 'netbox_client_ruby/entity'
-require 'netbox_client_ruby/api/dcim/interface'
-require 'netbox_client_ruby/api/ipam/vrf'
-require 'netbox_client_ruby/api/tenancy/tenant'
-require 'ipaddress'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module IPAM
@@ -37,12 +33,8 @@ module NetboxClientRuby
         interface_data = data['interface']
 
         return nil unless interface_data
-
-        if interface_data.key? ('virtual_machine')
-          Virtualization::Interface.new interface_data['id']
-        else
-          DCIM::Interface.new interface_data['id']
-        end
+        return Virtualization::Interface.new interface_data['id'] unless interface_data.dig('virtual_machine').nil?
+        return DCIM::Interface.new interface_data['id']
       end
     end
   end

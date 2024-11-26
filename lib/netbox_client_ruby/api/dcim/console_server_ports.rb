@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/dcim/console_server_port'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module DCIM
     class ConsoleServerPorts
       include Entities
 
-      path 'dcim/console-server-ports.json'
+      path 'dcim/console-server-ports/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

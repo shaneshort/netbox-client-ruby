@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::DCIM::PowerPort, faraday_stub: true do
+RSpec.describe NetboxClientRuby::DCIM::PowerPort, faraday_stub: true do
   let(:entity_id) { 3 }
   let(:expected_name) { 'psu1' }
   let(:base_url) { '/api/dcim/power-ports/' }

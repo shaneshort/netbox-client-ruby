@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/ipam/ip_range'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module IPAM
     class IpRanges
       include Entities
 
-      path 'ipam/ip-ranges.json'
+      path 'ipam/ip-ranges/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/extras/config_context'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module Extras
     class ConfigContexts
       include Entities
 
-      path 'extras/config-contexts.json'
+      path 'extras/config-contexts/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

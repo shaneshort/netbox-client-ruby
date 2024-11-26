@@ -1,12 +1,11 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/ipam/vlan'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module IPAM
     class Vlans
       include Entities
 
-      path 'ipam/vlans.json'
+      path 'ipam/vlans/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

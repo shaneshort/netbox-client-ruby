@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::DCIM::Devices, faraday_stub: true do
+RSpec.describe NetboxClientRuby::DCIM::Devices, faraday_stub: true do
   let(:expected_length) { 4 }
   let(:singular_type) { NetboxClientRuby::DCIM::Device }
 
   let(:response) { File.read('spec/fixtures/dcim/devices.json') }
-  let(:request_url) { '/api/dcim/devices.json' }
+  let(:request_url) { '/api/dcim/devices/' }
   let(:request_url_params) do
     { limit: NetboxClientRuby.config.netbox.pagination.default_limit }
   end

@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe NetboxClientRuby::IPAM::Vrfs, faraday_stub: true do
+RSpec.describe NetboxClientRuby::IPAM::Vrfs, faraday_stub: true do
   let(:expected_length) { 2 }
   let(:expected_singular_type) { NetboxClientRuby::IPAM::Vrf }
 
   let(:response) { File.read('spec/fixtures/ipam/vrfs.json') }
-  let(:request_url) { '/api/ipam/vrfs.json' }
+  let(:request_url) { '/api/ipam/vrfs/' }
   let(:request_url_params) do
     { limit: NetboxClientRuby.config.netbox.pagination.default_limit }
   end

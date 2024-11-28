@@ -31,6 +31,7 @@ Zeitwerk::Loader.for_gem.tap do |loader|
   loader.collapse("#{__dir__}/netbox_client_ruby/api")
   loader.inflector.inflect('dcim' => 'DCIM')
   loader.inflector.inflect('ipam' => 'IPAM')
+  loader.inflector.inflect('vpn' => 'VPN')
   loader.inflector.inflect('rsa_key_pair' => 'RSAKeyPair')
   # loader.log!
   loader.setup

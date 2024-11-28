@@ -1,7 +1,4 @@
-require 'netbox_client_ruby/entity'
-require 'netbox_client_ruby/api/ipam/rir'
-require 'netbox_client_ruby/api/tenancy/tenant'
-require 'netbox_client_ruby/api/extras/tag'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module IPAM

@@ -1,21 +1,4 @@
-require 'netbox_client_ruby/api/vpn/ike_policies'
-require 'netbox_client_ruby/api/vpn/ike_policy'
-require 'netbox_client_ruby/api/vpn/ike_proposals'
-require 'netbox_client_ruby/api/vpn/ike_proposal'
-require 'netbox_client_ruby/api/vpn/ipsec_policies'
-require 'netbox_client_ruby/api/vpn/ipsec_policy'
-require 'netbox_client_ruby/api/vpn/l2vpn_terminations'
-require 'netbox_client_ruby/api/vpn/l2vpn_termination'
-require 'netbox_client_ruby/api/vpn/l2vpns'
-require 'netbox_client_ruby/api/vpn/l2vpn'
-require 'netbox_client_ruby/api/vpn/tunnel_groups'
-require 'netbox_client_ruby/api/vpn/tunnel_group'
-require 'netbox_client_ruby/api/vpn/tunnel_terminations'
-require 'netbox_client_ruby/api/vpn/tunnel_termination'
-require 'netbox_client_ruby/api/vpn/tunnels'
-require 'netbox_client_ruby/api/vpn/tunnel'
-
-require 'netbox_client_ruby/communication'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module VPN

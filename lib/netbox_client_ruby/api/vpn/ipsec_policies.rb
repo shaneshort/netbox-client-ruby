@@ -1,5 +1,4 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/vpn/ipsec_policy'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module VPN

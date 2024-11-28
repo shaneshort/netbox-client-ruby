@@ -17,7 +17,7 @@ end
 
 NCR = NetboxClientRuby
 
-version = File.read(File.expand_path('../VERSION', __dir__)).strip
+version = `git describe --tags --match="v[0-9]*" --abbrev=0 2> /dev/null`.strip.delete_prefix("v")
 
 puts <<~WELCOME_TEXT
   This is using NetboxClientRuby v#{version}.

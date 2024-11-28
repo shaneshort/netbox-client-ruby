@@ -2,7 +2,7 @@
 
 module NetboxClientRuby
   module VPN
-    class IpsecPolicies
+    class IPSECPolicies
       include Entities
 
       path 'vpn/ipsec-policies.json'
@@ -13,7 +13,7 @@ module NetboxClientRuby
       private
 
       def entity_creator(raw_entity)
-        IpsecPolicy.new raw_entity['id']
+        IPSECPolicy.new raw_entity['id']
       end
     end
   end

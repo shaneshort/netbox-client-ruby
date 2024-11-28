@@ -2,7 +2,7 @@
 
 module NetboxClientRuby
   module VPN
-    class IkeProposals
+    class IKEProposals
       include Entities
 
       path 'vpn/ike-proposals.json'
@@ -13,7 +13,7 @@ module NetboxClientRuby
       private
 
       def entity_creator(raw_entity)
-        IkeProposals.new raw_entity['id']
+        IKEProposals.new raw_entity['id']
       end
     end
   end

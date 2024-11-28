@@ -33,6 +33,19 @@ Zeitwerk::Loader.for_gem.tap do |loader|
   loader.inflector.inflect('ipam' => 'IPAM')
   loader.inflector.inflect('vpn' => 'VPN')
   loader.inflector.inflect('l2vpn' => 'L2VPN')
+  loader.inflector.inflect('ipsec' => 'IPSEC')
+  loader.inflector.inflect('ike' => 'IKE')
+
+  # Specific inflections
+  loader.inflector.inflect('ipsec_policy' => 'IPSECPolicy')
+  loader.inflector.inflect('ipsec_policies' => 'IPSECPolicies')
+  loader.inflector.inflect('l2vpns' => 'L2VPNs')
+  loader.inflector.inflect('l2vpn_termination' => 'L2VPNTermination')
+  loader.inflector.inflect('l2vpn_terminations' => 'L2VPNTerminations')
+  loader.inflector.inflect('ike_policy' => 'IKEPolicy')
+  loader.inflector.inflect('ike_policies' => 'IKEPolicies')
+  loader.inflector.inflect('ike_proposal' => 'IKEProposal')
+  loader.inflector.inflect('ike_proposals' => 'IKEProposals')
   loader.inflector.inflect('rsa_key_pair' => 'RSAKeyPair')
   # loader.log!
   loader.setup

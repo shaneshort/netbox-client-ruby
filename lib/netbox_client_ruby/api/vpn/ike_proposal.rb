@@ -2,7 +2,7 @@
 
 module NetboxClientRuby
   module VPN
-    class IkeProposal
+    class IKEProposal
       include Entity
 
       id id: :id

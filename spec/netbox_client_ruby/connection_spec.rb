@@ -57,13 +57,8 @@ RSpec.describe NetboxClientRuby::Connection do
     end
 
     it 'adds the json middleware' do
-      if Faraday::VERSION < '2'
-        expect(NetboxClientRuby::Connection.new.builder.handlers)
-          .to include FaradayMiddleware::ParseJson
-      else
-        expect(NetboxClientRuby::Connection.new.builder.handlers)
-          .to include Faraday::Request::Json, Faraday::Response::Json
-      end
+      expect(NetboxClientRuby::Connection.new.builder.handlers)
+        .to include Faraday::Request::Json, Faraday::Response::Json
     end
   end
 

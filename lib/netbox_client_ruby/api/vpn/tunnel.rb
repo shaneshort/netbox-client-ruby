@@ -1,4 +1,4 @@
-require 'netbox_client_ruby/entity'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module VPN

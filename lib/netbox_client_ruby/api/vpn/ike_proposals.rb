@@ -1,5 +1,4 @@
-require 'netbox_client_ruby/entities'
-require 'netbox_client_ruby/api/vpn/ike_proposals'
+# frozen_string_literal: true
 
 module NetboxClientRuby
   module VPN

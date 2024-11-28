@@ -2,7 +2,7 @@
 
 module NetboxClientRuby
   module VPN
-    class IpsecPolicy
+    class IPSECPolicy
       include Entity
 
       id id: :id

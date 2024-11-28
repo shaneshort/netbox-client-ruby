@@ -3,9 +3,9 @@
 module NetboxClientRuby
   module VPN
     {
-      ike_policies: IkePolicies,
-      ike_proposals: IkeProposals,
-      ipsec_policies: IpsecPolicies,
+      ike_policies: IKEPolicies,
+      ike_proposals: IKEProposals,
+      ipsec_policies: IPSECPolicies,
       l2vpn_terminations: L2VPNTerminations,
       l2vpns: L2VPNs,
       tunnel_groups: TunnelGroups,
@@ -17,9 +17,9 @@ module NetboxClientRuby
     end
 
     {
-      ike_policy: IkePolicy,
-      ike_proposal: IkeProposal,
-      ipsec_policy: IpsecPolicy,
+      ike_policy: IKEPolicy,
+      ike_proposal: IKEProposal,
+      ipsec_policy: IPSECPolicy,
       l2vpn_termination: L2VPNTermination,
       l2vpn: L2VPN,
       tunnel_group: TunnelGroup,

@@ -182,6 +182,10 @@ module NetboxClientRuby
       data
     end
 
+    def dig(*keys)
+      data.dig(*keys)
+    end
+
     def [](name)
       s_name = name.to_s
       dirty_data[s_name] || data[s_name]

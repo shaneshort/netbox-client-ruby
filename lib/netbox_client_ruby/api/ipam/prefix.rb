@@ -20,6 +20,14 @@ module NetboxClientRuby
       )
       readonly_fields :display_name
 
+      def available_ips
+        request_path = replace_path_variables_in 'ipam/prefixes/:id/available-ips/'
+        response = connection.get request_path
+        response.body.collect do |object|
+          IpAddress.new object
+        end
+      end
+
       def available_prefixes(prefix_length = 24)
         request_path = replace_path_variables_in 'ipam/prefixes/:id/available-prefixes/'
         response = connection.get request_path, { prefix_length: prefix_length }

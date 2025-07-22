@@ -194,6 +194,8 @@ Not all objects which the Netbox API exposes are currently implemented. Implemen
 * Tenancy:
   * Tenant: `NetboxClientRuby.tenancy.tenants`
   * Tenant Groups: `NetboxClientRuby.tenancy.tenant_groups`
+  * Contact: `NetboxClientRuby.tenancy.contacts`
+  * Contact Groups: `NetboxClientRuby.tenancy.contact_groups`
 * Virtualization:
   * Cluster Types: `NetboxClientRuby.virtualization.cluster_types`
   * Cluster Groups: `NetboxClientRuby.virtualization.cluster_groups`
@@ -243,7 +245,7 @@ Before opening a PR, please
 * extend the existing specs
 * run rspec
 * run rubocop and fix your warnings
-* check if this README.md file needs adjustments
+* check if this `README.md` file needs adjustments
 
 ## License
 

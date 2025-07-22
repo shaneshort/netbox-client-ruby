@@ -5,7 +5,7 @@ module NetboxClientRuby
     class L2VPNTerminations
       include Entities
 
-      path 'vpn/l2vpn-terminations.json'
+      path 'vpn/l2vpn-terminations/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

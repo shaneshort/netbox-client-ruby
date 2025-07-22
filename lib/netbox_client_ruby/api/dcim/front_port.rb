@@ -7,7 +7,7 @@ module NetboxClientRuby
 
       id id: 'id'
       deletable true
-      path 'dcim/front-ports/:id.json'
+      path 'dcim/front-ports/:id/'
       creation_path 'dcim/front-ports/'
 
       object_fields(

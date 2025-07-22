@@ -5,7 +5,7 @@ module NetboxClientRuby
     class AsnRanges
       include Entities
 
-      path 'ipam/asn-ranges.json'
+      path 'ipam/asn-ranges/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

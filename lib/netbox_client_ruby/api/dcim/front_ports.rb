@@ -5,7 +5,7 @@ module NetboxClientRuby
     class FrontPorts
       include Entities
 
-      path 'dcim/front-ports.json'
+      path 'dcim/front-ports/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

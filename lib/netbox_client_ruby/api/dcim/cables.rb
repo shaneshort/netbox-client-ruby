@@ -5,7 +5,7 @@ module NetboxClientRuby
     class Cables
       include Entities
 
-      path 'dcim/cables.json'
+      path 'dcim/cables/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

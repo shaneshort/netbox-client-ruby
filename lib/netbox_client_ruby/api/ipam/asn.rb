@@ -7,7 +7,7 @@ module NetboxClientRuby
 
       id id: 'id'
       deletable true
-      path 'ipam/asns/:id.json'
+      path 'ipam/asns/:id/'
       creation_path 'ipam/asns/'
 
       object_fields(

@@ -5,7 +5,7 @@ module NetboxClientRuby
     class RearPorts
       include Entities
 
-      path 'dcim/rear-ports.json'
+      path 'dcim/rear-ports/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

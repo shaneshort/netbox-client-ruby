@@ -5,7 +5,7 @@ module NetboxClientRuby
     class L2VPNs
       include Entities
 
-      path 'vpn/l2vpns.json'
+      path 'vpn/l2vpns/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

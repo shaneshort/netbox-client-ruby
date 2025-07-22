@@ -5,7 +5,7 @@ module NetboxClientRuby
     class IKEProposals
       include Entities
 
-      path 'vpn/ike-proposals.json'
+      path 'vpn/ike-proposals/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

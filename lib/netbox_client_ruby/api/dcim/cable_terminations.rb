@@ -5,7 +5,7 @@ module NetboxClientRuby
     class CableTerminations
       include Entities
 
-      path 'dcim/cable-terminations.json'
+      path 'dcim/cable-terminations/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

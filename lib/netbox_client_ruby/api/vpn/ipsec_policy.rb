@@ -7,7 +7,7 @@ module NetboxClientRuby
 
       id id: :id
       deletable true
-      path 'vpn/ipsec-policies/:id.json'
+      path 'vpn/ipsec-policies/:id/'
       creation_path 'vpn/ipsec-policies/'
 
     end

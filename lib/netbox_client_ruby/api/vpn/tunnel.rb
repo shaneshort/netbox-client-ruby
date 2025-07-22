@@ -7,7 +7,7 @@ module NetboxClientRuby
 
       id id: :id
       deletable true
-      path 'vpn/tunnels/:id.json'
+      path 'vpn/tunnels/:id/'
       creation_path 'vpn/tunnels/'
 
     end

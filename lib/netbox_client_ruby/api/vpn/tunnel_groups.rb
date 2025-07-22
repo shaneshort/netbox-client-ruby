@@ -5,7 +5,7 @@ module NetboxClientRuby
     class TunnelGroups
       include Entities
 
-      path 'vpn/tunnel-groups.json'
+      path 'vpn/tunnel-groups/'
       data_key 'results'
       count_key 'count'
       entity_creator :entity_creator

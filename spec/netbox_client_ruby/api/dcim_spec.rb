@@ -29,6 +29,7 @@ module NetboxClientRuby
         rear_ports: RearPorts,
         regions: Regions,
         sites: Sites,
+        site_groups: SiteGroups,
         virtual_chassis_list: VirtualChassisList,
       }.each do |method, expected_class|
         describe ".#{method}" do
@@ -75,6 +76,7 @@ module NetboxClientRuby
         rear_port: RearPort,
         region: Region,
         site: Site,
+        site_group: SiteGroup,
         virtual_chassis: VirtualChassis,
       }.each do |method, expected_class|
         describe ".#{method}" do

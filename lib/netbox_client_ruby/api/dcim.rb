@@ -28,6 +28,7 @@ module NetboxClientRuby
       rear_ports: RearPorts,
       regions: Regions,
       sites: Sites,
+      site_groups: SiteGroups,
       virtual_chassis_list: VirtualChassisList,
     }.each_pair do |method_name, class_name|
       NetboxClientRuby.load_collection(self, method_name, class_name)
@@ -59,6 +60,7 @@ module NetboxClientRuby
       rear_port: RearPort,
       region: Region,
       site: Site,
+      site_group: SiteGroup,
       virtual_chassis: VirtualChassis,
     }.each_pair do |method_name, class_name|
       NetboxClientRuby.load_entity(self, method_name, class_name)

@@ -1,0 +1,91 @@
+module NetboxClientRuby
+  module Tenancy
+    def self.tenants: () -> Tenants
+    def self.tenant_groups: () -> TenantGroups
+    def self.contacts: () -> Contacts
+    def self.contact_groups: () -> ContactGroups
+
+    def self.tenant: (Integer | String id) -> Tenant
+    def self.tenant_group: (Integer | String id) -> TenantGroup
+    def self.contact: (Integer | String id) -> Contact
+    def self.contact_group: (Integer | String id) -> ContactGroup
+
+    def tenants: () -> Tenants
+    def tenant_groups: () -> TenantGroups
+    def contacts: () -> Contacts
+    def contact_groups: () -> ContactGroups
+
+    def tenant: (Integer | String id) -> Tenant
+    def tenant_group: (Integer | String id) -> TenantGroup
+    def contact: (Integer | String id) -> Contact
+    def contact_group: (Integer | String id) -> ContactGroup
+
+    class Tenant
+      include Entity
+
+      def group: () -> TenantGroup?
+      def group=: (untyped) -> untyped
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+      def description: () -> String?
+      def description=: (String?) -> String?
+      def comments: () -> String?
+      def comments=: (String?) -> String?
+      def tags: () -> untyped
+      def tags=: (untyped) -> untyped
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+    end
+
+    class Tenants
+      include Entities[Tenant]
+    end
+
+    class TenantGroup
+      include Entity
+
+      def parent: () -> TenantGroup?
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+      def description: () -> String?
+    end
+
+    class TenantGroups
+      include Entities[TenantGroup]
+    end
+
+    class Contact
+      include Entity
+
+      def group: () -> ContactGroup?
+      def name: () -> String?
+      def title: () -> String?
+      def phone: () -> String?
+      def email: () -> String?
+      def address: () -> String?
+      def comments: () -> String?
+    end
+
+    class Contacts
+      include Entities[Contact]
+    end
+
+    class ContactGroup
+      include Entity
+
+      def parent: () -> ContactGroup?
+      def name: () -> String?
+      def slug: () -> String?
+      def description: () -> String?
+    end
+
+    class ContactGroups
+      include Entities[ContactGroup]
+    end
+  end
+end

@@ -1,19 +1,50 @@
 # frozen_string_literal: true
 
-require 'bundler/setup'
+# Load ruby-warning gem
+require 'warning'
+
+Warning[:deprecated]   = true
+Warning[:experimental] = true
+Warning[:performance]  = true if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('3.3.0')
+
+# Ignore all warnings in Gem dependencies
+Gem.path.each do |path|
+  Warning.ignore(//, path)
+end
+
+# Ignore OpenStruct warning (only used in tests)
+Warning.ignore(/OpenStruct use is discouraged for performance reasons/)
+
+# Load simplecov
+require 'simplecov'
+require 'simplecov_json_formatter'
+
+# Start SimpleCov
+SimpleCov.start do
+  formatter SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::HTMLFormatter, SimpleCov::Formatter::JSONFormatter])
+  add_filter 'spec/'
+end
+
+# Load gem
 require 'netbox-client-ruby'
-require 'shared_context'
+require_relative 'shared_contexts/netbox_client'
+require_relative 'shared_contexts/faraday'
 require 'faraday/net_http_persistent' if Faraday::VERSION > '2'
 
+# Configure rspec
 RSpec.configure do |config|
   config.example_status_persistence_file_path = '.rspec_status'
 
+  config.color = true
+  config.fail_fast = false
+  config.fail_if_no_examples = true
+
+  config.order = :random
+  Kernel.srand config.seed
+
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
-  config.order = 'random'
   config.include_context 'connection setup'
-
-  config.fail_if_no_examples = true
 
   config.expect_with :rspec do |c|
     c.syntax = :expect

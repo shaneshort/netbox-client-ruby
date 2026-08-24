@@ -1,0 +1,18 @@
+# frozen_string_literal: true
+
+module NetboxClientRuby
+  module DCIM
+
+    class ConsolePortTemplate
+      include Entity
+
+      id id: :id
+      deletable true
+      path 'dcim/console-port-templates/:id/'
+      creation_path 'dcim/console-port-templates/'
+      object_fields(
+        device_type: proc { |raw_data| DeviceType.new raw_data['id'] },
+      )
+    end
+  end
+end

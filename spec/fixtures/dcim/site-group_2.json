@@ -1,0 +1,12 @@
+{
+  "id": 2,
+  "name": "sub_sitegroup1",
+  "slug": "sub_sitegroup1",
+  "parent": {
+    "id": 1,
+    "url": "http://localhost/api/dcim/site-groups/1/",
+    "name": "sitegroup1",
+    "slug": "sitegroup1"
+  }
+}
+

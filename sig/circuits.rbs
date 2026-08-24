@@ -1,0 +1,82 @@
+module NetboxClientRuby
+  module Circuits
+    def self.providers: () -> Providers
+    def self.circuits: () -> Circuits
+    def self.circuit_types: () -> CircuitTypes
+    def self.circuit_terminations: () -> CircuitTerminations
+
+    def self.provider: (Integer | String id) -> Provider
+    def self.circuit: (Integer | String id) -> Circuit
+    def self.circuit_type: (Integer | String id) -> CircuitType
+    def self.circuit_termination: (Integer | String id) -> CircuitTermination
+
+    def providers: () -> Providers
+    def circuits: () -> Circuits
+    def circuit_types: () -> CircuitTypes
+    def circuit_terminations: () -> CircuitTerminations
+
+    def provider: (Integer | String id) -> Provider
+    def circuit: (Integer | String id) -> Circuit
+    def circuit_type: (Integer | String id) -> CircuitType
+    def circuit_termination: (Integer | String id) -> CircuitTermination
+
+    class Provider
+      include Entity
+
+      def name: () -> String?
+      def slug: () -> String?
+      def asn: () -> Integer?
+      def account: () -> String?
+      def portal_url: () -> String?
+      def comments: () -> String?
+    end
+
+    class Providers
+      include Entities[Provider]
+    end
+
+    class Circuit
+      include Entity
+
+      def provider: () -> Provider?
+      def type: () -> CircuitType?
+      def tenant: () -> Tenancy::Tenant?
+      def cid: () -> String?
+      def status: () -> untyped
+      def install_date: () -> String?
+      def commit_rate: () -> Integer?
+      def description: () -> String?
+      def comments: () -> String?
+    end
+
+    class Circuits
+      include Entities[Circuit]
+    end
+
+    class CircuitType
+      include Entity
+
+      def name: () -> String?
+      def slug: () -> String?
+      def description: () -> String?
+    end
+
+    class CircuitTypes
+      include Entities[CircuitType]
+    end
+
+    class CircuitTermination
+      include Entity
+
+      def circuit: () -> Circuit?
+      def site: () -> DCIM::Site?
+      def term_side: () -> String?
+      def port_speed: () -> Integer?
+      def upstream_speed: () -> Integer?
+    end
+
+    class CircuitTerminations
+      include Entities[CircuitTermination]
+    end
+  end
+end

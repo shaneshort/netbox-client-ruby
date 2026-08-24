@@ -1,0 +1,326 @@
+module NetboxClientRuby
+  module IPAM
+    def self.aggregates: () -> Aggregates
+    def self.asns: () -> Asns
+    def self.asn_ranges: () -> AsnRanges
+    def self.ip_addresses: () -> IpAddresses
+    def self.ip_ranges: () -> IpRanges
+    def self.prefixes: () -> Prefixes
+    def self.rirs: () -> Rirs
+    def self.roles: () -> Roles
+    def self.services: () -> Services
+    def self.vlans: () -> Vlans
+    def self.vlan_groups: () -> VlanGroups
+    def self.vrfs: () -> Vrfs
+
+    def self.aggregate: (Integer | String id) -> Aggregate
+    def self.asn: (Integer | String id) -> Asn
+    def self.asn_range: (Integer | String id) -> AsnRange
+    def self.ip_address: (Integer | String id) -> IpAddress
+    def self.ip_range: (Integer | String id) -> IpRange
+    def self.prefix: (Integer | String id) -> Prefix
+    def self.rir: (Integer | String id) -> Rir
+    def self.role: (Integer | String id) -> Role
+    def self.service: (Integer | String id) -> Service
+    def self.vlan: (Integer | String id) -> Vlan
+    def self.vlan_group: (Integer | String id) -> VlanGroup
+    def self.vrf: (Integer | String id) -> Vrf
+
+    def aggregates: () -> Aggregates
+    def asns: () -> Asns
+    def asn_ranges: () -> AsnRanges
+    def ip_addresses: () -> IpAddresses
+    def ip_ranges: () -> IpRanges
+    def prefixes: () -> Prefixes
+    def rirs: () -> Rirs
+    def roles: () -> Roles
+    def services: () -> Services
+    def vlans: () -> Vlans
+    def vlan_groups: () -> VlanGroups
+    def vrfs: () -> Vrfs
+
+    def aggregate: (Integer | String id) -> Aggregate
+    def asn: (Integer | String id) -> Asn
+    def asn_range: (Integer | String id) -> AsnRange
+    def ip_address: (Integer | String id) -> IpAddress
+    def ip_range: (Integer | String id) -> IpRange
+    def prefix: (Integer | String id) -> Prefix
+    def rir: (Integer | String id) -> Rir
+    def role: (Integer | String id) -> Role
+    def service: (Integer | String id) -> Service
+    def vlan: (Integer | String id) -> Vlan
+    def vlan_group: (Integer | String id) -> VlanGroup
+    def vrf: (Integer | String id) -> Vrf
+
+    class Aggregate
+      include Entity
+
+      def rir: () -> Rir?
+      def prefix: () -> untyped
+      def date_added: () -> String?
+      def description: () -> String?
+    end
+
+    class Aggregates
+      include Entities[Aggregate]
+    end
+
+    class Asn
+      include Entity
+
+      def rir: () -> Rir?
+      def rir=: (untyped) -> untyped
+      def tenant: () -> Tenancy::Tenant?
+      def tenant=: (untyped) -> untyped
+      def asn: () -> Integer?
+      def asn=: (Integer) -> Integer
+      def description: () -> String?
+      def description=: (String?) -> String?
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+    end
+
+    class Asns
+      include Entities[Asn]
+    end
+
+    class AsnRange
+      include Entity
+
+      def rir: () -> Rir?
+      def tenant: () -> Tenancy::Tenant?
+      def tags: () -> Extras::Tag?
+      def name: () -> String?
+      def slug: () -> String?
+      def start: () -> Integer?
+      def end: () -> Integer?
+      def description: () -> String?
+      def available_asns: () -> Array[Asn]
+    end
+
+    class AsnRanges
+      include Entities[AsnRange]
+    end
+
+    class IpAddress
+      include Entity
+
+      STATUS_VALUES: Hash[Symbol, Integer]
+
+      def vrf: () -> Vrf?
+      def vrf=: (untyped) -> untyped
+      def tenant: () -> Tenancy::Tenant?
+      def tenant=: (untyped) -> untyped
+      def status: () -> untyped
+      def status=: (untyped) -> untyped
+      def address: () -> untyped
+      def address=: (untyped) -> untyped
+      def dns_name: () -> String?
+      def dns_name=: (String?) -> String?
+      def description: () -> String?
+      def description=: (String?) -> String?
+      def assigned_object_id: () -> Integer?
+      def assigned_object_id=: (Integer?) -> Integer?
+      def assigned_object_type: () -> (String | Integer)?
+      def assigned_object_type=: (String | Integer) -> (String | Integer)
+      def interface: () -> (DCIM::Interface | Virtualization::Interface)?
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+    end
+
+    class IpAddresses
+      include Entities[IpAddress]
+    end
+
+    class IpRange
+      include Entity
+
+      def vrf: () -> Vrf?
+      def tenant: () -> Tenancy::Tenant?
+      def role: () -> Role?
+      def status: () -> IpRangeStatus?
+      def start_address: () -> untyped
+      def end_address: () -> untyped
+      def description: () -> String?
+    end
+
+    class IpRangeStatus
+      attr_reader value: untyped
+      attr_reader label: String?
+
+      def initialize: (Hash[String, untyped] raw_data) -> void
+    end
+
+    class IpRanges
+      include Entities[IpRange]
+    end
+
+    class Prefix
+      include Entity
+
+      def site: () -> DCIM::Site?
+      def vrf: () -> Vrf?
+      def tenant: () -> Tenancy::Tenant?
+      def vlan: () -> Vlan?
+      def status: () -> PrefixStatus?
+      def role: () -> Role?
+      def prefix: () -> untyped
+      def prefix=: (untyped) -> untyped
+      def description: () -> String?
+      def description=: (String?) -> String?
+      def is_pool: () -> bool?
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+
+      def available_ips: () -> Array[IpAddress]
+      def available_prefixes: (?Integer prefix_length) -> Array[Prefix]
+      def next_available_prefix: (?prefix_length: Integer, ?count: Integer) -> untyped
+    end
+
+    class PrefixStatus
+      attr_reader value: untyped
+      attr_reader label: String?
+
+      def initialize: (Hash[String, untyped] raw_data) -> void
+    end
+
+    class Prefixes
+      include Entities[Prefix]
+    end
+
+    class Rir
+      include Entity
+
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+      def is_private: () -> bool?
+      def description: () -> String?
+    end
+
+    class Rirs
+      include Entities[Rir]
+    end
+
+    class Role
+      include Entity
+
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+      def weight: () -> Integer?
+      def description: () -> String?
+    end
+
+    class Roles
+      include Entities[Role]
+    end
+
+    class Service
+      include Entity
+
+      def device: () -> DCIM::Device?
+      def virtual_machine: () -> Virtualization::VirtualMachine?
+      def name: () -> String?
+      def protocol: () -> ServiceProtocol?
+      def port: () -> Integer?
+      def ipaddresses: () -> Array[IpAddress]?
+      def description: () -> String?
+    end
+
+    class ServiceProtocol
+      attr_reader value: untyped
+      attr_reader label: String?
+
+      def initialize: (Hash[String, untyped] raw_data) -> void
+    end
+
+    class Services
+      include Entities[Service]
+    end
+
+    class Vlan
+      include Entity
+
+      def site: () -> DCIM::Site?
+      def group: () -> VlanGroup?
+      def group=: (untyped) -> untyped
+      def tenant: () -> Tenancy::Tenant?
+      def tenant=: (untyped) -> untyped
+      def role: () -> Role?
+      def role=: (untyped) -> untyped
+      def vid: () -> Integer?
+      def vid=: (Integer) -> Integer
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def status: () -> VlanStatus?
+      def status=: (untyped) -> untyped
+      def description: () -> String?
+      def description=: (String?) -> String?
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+    end
+
+    class VlanStatus
+      attr_reader value: untyped
+      attr_reader label: String?
+
+      def initialize: (Hash[String, untyped] raw_data) -> void
+    end
+
+    class Vlans
+      include Entities[Vlan]
+    end
+
+    class VlanGroup
+      include Entity
+
+      def site: () -> DCIM::Site?
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+      def min_vid: () -> Integer?
+      def min_vid=: (Integer) -> Integer
+      def max_vid: () -> Integer?
+      def max_vid=: (Integer) -> Integer
+      def description: () -> String?
+      def description=: (String?) -> String?
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+    end
+
+    class VlanGroups
+      include Entities[VlanGroup]
+    end
+
+    class Vrf
+      include Entity
+
+      def tenant: () -> Tenancy::Tenant?
+      def tenant=: (untyped) -> untyped
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def rd: () -> String?
+      def rd=: (String?) -> String?
+      def description: () -> String?
+      def description=: (String?) -> String?
+      def enforce_unique: () -> bool?
+      def enforce_unique=: (bool?) -> bool?
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+    end
+
+    class Vrfs
+      include Entities[Vrf]
+    end
+  end
+end

@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
+require 'netbox_client_ruby/entity'
+require 'netbox_client_ruby/api/dcim/device'
+require 'netbox_client_ruby/api/dcim/cable'
+require 'netbox_client_ruby/api/dcim/rear_port'
+
 module NetboxClientRuby
   module DCIM
     class FrontPort
       include Entity
 
-      id id: 'id'
+      id id: :id
       deletable true
       path 'dcim/front-ports/:id/'
       creation_path 'dcim/front-ports/'

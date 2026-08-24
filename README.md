@@ -149,14 +149,19 @@ Not all objects which the Netbox API exposes are currently implemented. Implemen
   * Circuit Terminations: `NetboxClientRuby.circuits.circuit_terminations`
   * Providers: `NetboxClientRuby.circuits.providers`
 * DCIM:
+  * Cables: `NetboxClientRuby.dcim.cables`
   * Console Connections: `NetboxClientRuby.dcim.console_connections`
   * Console Ports: `NetboxClientRuby.dcim.console_ports`
   * Console Server Ports: `NetboxClientRuby.dcim.console_server_ports`
   * Devices: `NetboxClientRuby.dcim.devices`
   * Device Roles: `NetboxClientRuby.dcim.device_roles`
   * Device Types: `NetboxClientRuby.dcim.device_types`
+  * Front Ports: `NetboxClientRuby.dcim.front_ports`
   * Interfaces: `NetboxClientRuby.dcim.interfaces`
   * Interface Connections: `NetboxClientRuby.dcim.interface_connections`
+  * Inventory Items: `NetboxClientRuby.dcim.inventory_items`
+  * Locations: `NetboxClientRuby.dcim.locations`
+  * MAC Addresses: `NetboxClientRuby.dcim.mac_addresses`
   * Manufacturers: `NetboxClientRuby.dcim.manufacturers`
   * Platforms: `NetboxClientRuby.dcim.platforms`
   * Power Connections: `NetboxClientRuby.dcim.power_connections`
@@ -166,6 +171,7 @@ Not all objects which the Netbox API exposes are currently implemented. Implemen
   * Rack Groups: `NetboxClientRuby.dcim.rack_groups`
   * Rack Roles: `NetboxClientRuby.dcim.rack_roles`
   * Rack Reservations: `NetboxClientRuby.dcim.rack_reservations`
+  * Rear Ports: `NetboxClientRuby.dcim.rear_ports`
   * Regions: `NetboxClientRuby.dcim.regions`
   * Sites: `NetboxClientRuby.dcim.sites`
   * Virtual Chassis: `NetboxClientRuby.dcim.virtual_chassis_list`
@@ -255,4 +261,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 This gem is currently maintained and funded by [nine](https://nine.ch).
 
-[![logo of the company 'nine'](https://logo.apps.at-nine.ch/Dmqied_eSaoBMQwk3vVgn4UIgDo=/trim/500x0/logo_claim.png)](https://www.nine.ch)
+[![logo of the company 'nine'](https://github.com/user-attachments/assets/cfdf3a03-5853-4f82-91f1-a6ef9f076759)](https://www.nine.ch)

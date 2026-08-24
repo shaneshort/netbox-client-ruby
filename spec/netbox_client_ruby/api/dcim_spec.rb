@@ -12,6 +12,7 @@ module NetboxClientRuby
         devices: Devices,
         device_roles: DeviceRoles,
         device_types: DeviceTypes,
+        front_ports: FrontPorts,
         interfaces: Interfaces,
         interface_connections: InterfaceConnections,
         inventory_items: InventoryItems,
@@ -25,9 +26,11 @@ module NetboxClientRuby
         rack_groups: RackGroups,
         rack_reservations: RackReservations,
         rack_roles: RackRoles,
+        rear_ports: RearPorts,
         regions: Regions,
         sites: Sites,
-        virtual_chassis_list: VirtualChassisList
+        site_groups: SiteGroups,
+        virtual_chassis_list: VirtualChassisList,
       }.each do |method, expected_class|
         describe ".#{method}" do
           subject { described_class.public_send(method) }
@@ -38,7 +41,7 @@ module NetboxClientRuby
 
           context 'is a different instance each time' do
             it do
-              is_expected
+              expect(subject)
                 .to_not be described_class.public_send(method)
             end
           end
@@ -56,6 +59,7 @@ module NetboxClientRuby
         device: Device,
         device_role: DeviceRole,
         device_type: DeviceType,
+        front_port: FrontPort,
         interface: Interface,
         interface_connection: InterfaceConnection,
         inventory_item: InventoryItem,
@@ -69,12 +73,15 @@ module NetboxClientRuby
         rack_group: RackGroup,
         rack_reservation: RackReservation,
         rack_role: RackRole,
+        rear_port: RearPort,
         region: Region,
         site: Site,
-        virtual_chassis: VirtualChassis
+        site_group: SiteGroup,
+        virtual_chassis: VirtualChassis,
       }.each do |method, expected_class|
         describe ".#{method}" do
           let(:id) { 1 }
+
           subject { described_class.public_send(method, id) }
 
           context 'is of the expected type' do
@@ -83,7 +90,7 @@ module NetboxClientRuby
 
           context 'it is a new instance each time' do
             it do
-              is_expected
+              expect(subject)
                 .to_not be described_class.public_send(method, id)
             end
           end

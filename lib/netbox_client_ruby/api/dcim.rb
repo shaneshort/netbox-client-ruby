@@ -7,6 +7,8 @@ require 'netbox_client_ruby/api/dcim/console_connection'
 require 'netbox_client_ruby/api/dcim/console_connections'
 require 'netbox_client_ruby/api/dcim/console_port'
 require 'netbox_client_ruby/api/dcim/console_ports'
+require 'netbox_client_ruby/api/dcim/console_port_template'
+require 'netbox_client_ruby/api/dcim/console_port_templates'
 require 'netbox_client_ruby/api/dcim/console_server_port'
 require 'netbox_client_ruby/api/dcim/console_server_ports'
 require 'netbox_client_ruby/api/dcim/device'
@@ -20,6 +22,8 @@ require 'netbox_client_ruby/api/dcim/front_ports'
 require 'netbox_client_ruby/api/dcim/interface'
 require 'netbox_client_ruby/api/dcim/interface_connection'
 require 'netbox_client_ruby/api/dcim/interface_connections'
+require 'netbox_client_ruby/api/dcim/interface_template'
+require 'netbox_client_ruby/api/dcim/interface_templates'
 require 'netbox_client_ruby/api/dcim/interfaces'
 require 'netbox_client_ruby/api/dcim/inventory_item'
 require 'netbox_client_ruby/api/dcim/inventory_items'
@@ -32,6 +36,8 @@ require 'netbox_client_ruby/api/dcim/power_connections'
 require 'netbox_client_ruby/api/dcim/power_outlet'
 require 'netbox_client_ruby/api/dcim/power_outlets'
 require 'netbox_client_ruby/api/dcim/power_port'
+require 'netbox_client_ruby/api/dcim/power_port_template'
+require 'netbox_client_ruby/api/dcim/power_port_templates'
 require 'netbox_client_ruby/api/dcim/power_ports'
 require 'netbox_client_ruby/api/dcim/rack'
 require 'netbox_client_ruby/api/dcim/rack_group'
@@ -58,6 +64,7 @@ module NetboxClientRuby
       cable_terminations: CableTerminations,
       console_connections: ConsoleConnections,
       console_ports: ConsolePorts,
+      console_port_templates: ConsolePortTemplates,
       console_server_ports: ConsoleServerPorts,
       devices: Devices,
       device_roles: DeviceRoles,
@@ -65,6 +72,7 @@ module NetboxClientRuby
       front_ports: FrontPorts,
       interfaces: Interfaces,
       interface_connections: InterfaceConnections,
+      interface_templates: InterfaceTemplates,
       inventory_items: InventoryItems,
       locations: Locations,
       mac_addresses: MacAddresses,
@@ -73,6 +81,7 @@ module NetboxClientRuby
       power_connections: PowerConnections,
       power_outlets: PowerOutlets,
       power_ports: PowerPorts,
+      power_port_templates: PowerPortTemplates,
       racks: Racks,
       rack_groups: RackGroups,
       rack_reservations: RackReservations,
@@ -91,12 +100,14 @@ module NetboxClientRuby
       cable_termination: CableTermination,
       console_connection: ConsoleConnection,
       console_port: ConsolePort,
+      console_port_template: ConsolePortTemplate,
       console_server_port: ConsoleServerPort,
       device: Device,
       device_role: DeviceRole,
       device_type: DeviceType,
       front_port: FrontPort,
       interface: Interface,
+      interface_template: InterfaceTemplate,
       interface_connection: InterfaceConnection,
       inventory_item: InventoryItem,
       location: Location,
@@ -106,6 +117,7 @@ module NetboxClientRuby
       power_connection: PowerConnection,
       power_outlet: PowerOutlet,
       power_port: PowerPort,
+      power_port_template: PowerPortTemplate,
       rack: Rack,
       rack_group: RackGroup,
       rack_reservation: RackReservation,

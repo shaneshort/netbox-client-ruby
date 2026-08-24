@@ -9,7 +9,6 @@ module NetboxClientRuby
       deletable true
       path 'vpn/tunnels/:id/'
       creation_path 'vpn/tunnels/'
-
     end
   end
 end

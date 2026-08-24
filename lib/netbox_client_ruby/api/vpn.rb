@@ -10,7 +10,7 @@ module NetboxClientRuby
       l2vpns: L2VPNs,
       tunnel_groups: TunnelGroups,
       tunnel_terminations: TunnelTerminations,
-      tunnels: Tunnels
+      tunnels: Tunnels,
     }.each_pair do |method_name, class_name|
       define_method(method_name) { class_name.new }
       module_function(method_name)
@@ -24,7 +24,7 @@ module NetboxClientRuby
       l2vpn: L2VPN,
       tunnel_group: TunnelGroup,
       tunnel_termination: TunnelTermination,
-      tunnel: Tunnel
+      tunnel: Tunnel,
     }.each_pair do |method_name, class_name|
       define_method(method_name) { |id| class_name.new id }
       module_function(method_name)

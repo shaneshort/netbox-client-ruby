@@ -2,7 +2,6 @@
 
 module NetboxClientRuby
   module DCIM
-
     class InterfaceTemplates
       include Entities
 

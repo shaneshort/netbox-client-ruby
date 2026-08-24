@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'netbox_client_ruby/api/ipam/asn'
 require 'netbox_client_ruby/api/ipam/asns'
 require 'netbox_client_ruby/api/ipam/asn_range'

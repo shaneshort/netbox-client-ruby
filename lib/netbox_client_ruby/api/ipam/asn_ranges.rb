@@ -18,4 +18,3 @@ module NetboxClientRuby
     end
   end
 end
-

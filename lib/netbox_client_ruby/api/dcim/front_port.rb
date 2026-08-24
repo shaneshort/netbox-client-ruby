@@ -19,8 +19,7 @@ module NetboxClientRuby
         device: proc { |raw_data| Device.new raw_data['id'] },
         cable: proc { |raw_data| Cable.new raw_data['id'] },
         rear_port: proc { |raw_data| RearPort.new raw_data['id'] },
-        )
-
+      )
     end
   end
 end

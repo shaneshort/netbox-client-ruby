@@ -48,7 +48,7 @@ module NetboxClientRuby
           prefixes << prefix
         end
 
-        prefixes.count == 1 ? prefixes.first : prefixes
+        prefixes.one? ? prefixes.first : prefixes
       end
     end
 

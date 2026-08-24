@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'netbox_client_ruby/api/dcim/cable'
 require 'netbox_client_ruby/api/dcim/cables'
 require 'netbox_client_ruby/api/dcim/cable_termination'

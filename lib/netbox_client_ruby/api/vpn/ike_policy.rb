@@ -9,7 +9,6 @@ module NetboxClientRuby
       deletable true
       path 'vpn/ike-policies/:id/'
       creation_path 'vpn/ike-policies/'
-
     end
   end
 end

@@ -1,0 +1,138 @@
+module NetboxClientRuby
+  module VPN
+    def self.ike_policies: () -> IKEPolicies
+    def self.ike_proposals: () -> IKEProposals
+    def self.ipsec_policies: () -> IPSECPolicies
+    def self.l2vpn_terminations: () -> L2VPNTerminations
+    def self.l2vpns: () -> L2VPNs
+    def self.tunnel_groups: () -> TunnelGroups
+    def self.tunnel_terminations: () -> TunnelTerminations
+    def self.tunnels: () -> Tunnels
+
+    def self.ike_policy: (Integer | String id) -> IKEPolicy
+    def self.ike_proposal: (Integer | String id) -> IKEProposal
+    def self.ipsec_policy: (Integer | String id) -> IPSECPolicy
+    def self.l2vpn_termination: (Integer | String id) -> L2VPNTermination
+    def self.l2vpn: (Integer | String id) -> L2VPN
+    def self.tunnel_group: (Integer | String id) -> TunnelGroup
+    def self.tunnel_termination: (Integer | String id) -> TunnelTermination
+    def self.tunnel: (Integer | String id) -> Tunnel
+
+    def ike_policies: () -> IKEPolicies
+    def ike_proposals: () -> IKEProposals
+    def ipsec_policies: () -> IPSECPolicies
+    def l2vpn_terminations: () -> L2VPNTerminations
+    def l2vpns: () -> L2VPNs
+    def tunnel_groups: () -> TunnelGroups
+    def tunnel_terminations: () -> TunnelTerminations
+    def tunnels: () -> Tunnels
+
+    def ike_policy: (Integer | String id) -> IKEPolicy
+    def ike_proposal: (Integer | String id) -> IKEProposal
+    def ipsec_policy: (Integer | String id) -> IPSECPolicy
+    def l2vpn_termination: (Integer | String id) -> L2VPNTermination
+    def l2vpn: (Integer | String id) -> L2VPN
+    def tunnel_group: (Integer | String id) -> TunnelGroup
+    def tunnel_termination: (Integer | String id) -> TunnelTermination
+    def tunnel: (Integer | String id) -> Tunnel
+
+    class IKEPolicy
+      include Entity
+    end
+
+    class IKEPolicies
+      include Entities[IKEPolicy]
+    end
+
+    class IKEProposal
+      include Entity
+    end
+
+    class IKEProposals
+      include Entities[IKEProposal]
+    end
+
+    class IPSECPolicy
+      include Entity
+    end
+
+    class IPSECPolicies
+      include Entities[IPSECPolicy]
+    end
+
+    class L2VPN
+      include Entity
+
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+      def type: () -> untyped
+      def type=: (untyped) -> untyped
+      def identifier: () -> (Integer | String)?
+      def identifier=: (untyped) -> untyped
+      def description: () -> String?
+      def description=: (String?) -> String?
+      def tenant: () -> Tenancy::Tenant?
+      def tenant=: (untyped) -> untyped
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+    end
+
+    class L2VPNs
+      include Entities[L2VPN]
+    end
+
+    class L2VPNTermination
+      include Entity
+
+      def l2vpn: () -> untyped
+      def l2vpn=: (untyped) -> untyped
+      def assigned_object_id: () -> Integer?
+      def assigned_object_id=: (Integer?) -> Integer?
+      def assigned_object_type: () -> String?
+      def assigned_object_type=: (String?) -> String?
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+    end
+
+    class L2VPNTerminations
+      include Entities[L2VPNTermination]
+    end
+
+    class TunnelGroup
+      include Entity
+
+      def name: () -> String?
+      def slug: () -> String?
+      def description: () -> String?
+    end
+
+    class TunnelGroups
+      include Entities[TunnelGroup]
+    end
+
+    class TunnelTermination
+      include Entity
+    end
+
+    class TunnelTerminations
+      include Entities[TunnelTermination]
+    end
+
+    class Tunnel
+      include Entity
+
+      def name: () -> String?
+      def group: () -> TunnelGroup?
+      def status: () -> untyped
+      def description: () -> String?
+    end
+
+    class Tunnels
+      include Entities[Tunnel]
+    end
+  end
+end

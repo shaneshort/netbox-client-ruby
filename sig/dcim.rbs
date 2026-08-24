@@ -1,0 +1,532 @@
+module NetboxClientRuby
+  module DCIM
+    def self.cables: () -> Cables
+    def self.cable_terminations: () -> CableTerminations
+    def self.console_connections: () -> ConsoleConnections
+    def self.console_ports: () -> ConsolePorts
+    def self.console_port_templates: () -> ConsolePortTemplates
+    def self.console_server_ports: () -> ConsoleServerPorts
+    def self.devices: () -> Devices
+    def self.device_roles: () -> DeviceRoles
+    def self.device_types: () -> DeviceTypes
+    def self.front_ports: () -> FrontPorts
+    def self.interfaces: () -> Interfaces
+    def self.interface_connections: () -> InterfaceConnections
+    def self.interface_templates: () -> InterfaceTemplates
+    def self.inventory_items: () -> InventoryItems
+    def self.locations: () -> Locations
+    def self.mac_addresses: () -> MacAddresses
+    def self.manufacturers: () -> Manufacturers
+    def self.platforms: () -> Platforms
+    def self.power_connections: () -> PowerConnections
+    def self.power_outlets: () -> PowerOutlets
+    def self.power_ports: () -> PowerPorts
+    def self.power_port_templates: () -> PowerPortTemplates
+    def self.racks: () -> Racks
+    def self.rack_groups: () -> RackGroups
+    def self.rack_reservations: () -> RackReservations
+    def self.rack_roles: () -> RackRoles
+    def self.rear_ports: () -> RearPorts
+    def self.regions: () -> Regions
+    def self.sites: () -> Sites
+    def self.site_groups: () -> SiteGroups
+    def self.virtual_chassis_list: () -> VirtualChassisList
+
+    def self.cable: (Integer | String id) -> Cable
+    def self.cable_termination: (Integer | String id) -> CableTermination
+    def self.console_connection: (Integer | String id) -> ConsoleConnection
+    def self.console_port: (Integer | String id) -> ConsolePort
+    def self.console_port_template: (Integer | String id) -> ConsolePortTemplate
+    def self.console_server_port: (Integer | String id) -> ConsoleServerPort
+    def self.device: (Integer | String id) -> Device
+    def self.device_role: (Integer | String id) -> DeviceRole
+    def self.device_type: (Integer | String id) -> DeviceType
+    def self.front_port: (Integer | String id) -> FrontPort
+    def self.interface: (Integer | String id) -> Interface
+    def self.interface_connection: (Integer | String id) -> InterfaceConnection
+    def self.interface_template: (Integer | String id) -> InterfaceTemplate
+    def self.inventory_item: (Integer | String id) -> InventoryItem
+    def self.location: (Integer | String id) -> Location
+    def self.mac_address: (Integer | String id) -> MacAddress
+    def self.manufacturer: (Integer | String id) -> Manufacturer
+    def self.platform: (Integer | String id) -> Platform
+    def self.power_connection: (Integer | String id) -> PowerConnection
+    def self.power_outlet: (Integer | String id) -> PowerOutlet
+    def self.power_port: (Integer | String id) -> PowerPort
+    def self.power_port_template: (Integer | String id) -> PowerPortTemplate
+    def self.rack: (Integer | String id) -> Rack
+    def self.rack_group: (Integer | String id) -> RackGroup
+    def self.rack_reservation: (Integer | String id) -> RackReservation
+    def self.rack_role: (Integer | String id) -> RackRole
+    def self.rear_port: (Integer | String id) -> RearPort
+    def self.region: (Integer | String id) -> Region
+    def self.site: (Integer | String id) -> Site
+    def self.site_group: (Integer | String id) -> SiteGroup
+    def self.virtual_chassis: (Integer | String id) -> VirtualChassis
+
+    def cables: () -> Cables
+    def cable_terminations: () -> CableTerminations
+    def console_connections: () -> ConsoleConnections
+    def console_ports: () -> ConsolePorts
+    def console_port_templates: () -> ConsolePortTemplates
+    def console_server_ports: () -> ConsoleServerPorts
+    def devices: () -> Devices
+    def device_roles: () -> DeviceRoles
+    def device_types: () -> DeviceTypes
+    def front_ports: () -> FrontPorts
+    def interfaces: () -> Interfaces
+    def interface_connections: () -> InterfaceConnections
+    def interface_templates: () -> InterfaceTemplates
+    def inventory_items: () -> InventoryItems
+    def locations: () -> Locations
+    def mac_addresses: () -> MacAddresses
+    def manufacturers: () -> Manufacturers
+    def platforms: () -> Platforms
+    def power_connections: () -> PowerConnections
+    def power_outlets: () -> PowerOutlets
+    def power_ports: () -> PowerPorts
+    def power_port_templates: () -> PowerPortTemplates
+    def racks: () -> Racks
+    def rack_groups: () -> RackGroups
+    def rack_reservations: () -> RackReservations
+    def rack_roles: () -> RackRoles
+    def rear_ports: () -> RearPorts
+    def regions: () -> Regions
+    def sites: () -> Sites
+    def site_groups: () -> SiteGroups
+    def virtual_chassis_list: () -> VirtualChassisList
+
+    def cable: (Integer | String id) -> Cable
+    def cable_termination: (Integer | String id) -> CableTermination
+    def console_connection: (Integer | String id) -> ConsoleConnection
+    def console_port: (Integer | String id) -> ConsolePort
+    def console_port_template: (Integer | String id) -> ConsolePortTemplate
+    def console_server_port: (Integer | String id) -> ConsoleServerPort
+    def device: (Integer | String id) -> Device
+    def device_role: (Integer | String id) -> DeviceRole
+    def device_type: (Integer | String id) -> DeviceType
+    def front_port: (Integer | String id) -> FrontPort
+    def interface: (Integer | String id) -> Interface
+    def interface_connection: (Integer | String id) -> InterfaceConnection
+    def interface_template: (Integer | String id) -> InterfaceTemplate
+    def inventory_item: (Integer | String id) -> InventoryItem
+    def location: (Integer | String id) -> Location
+    def mac_address: (Integer | String id) -> MacAddress
+    def manufacturer: (Integer | String id) -> Manufacturer
+    def platform: (Integer | String id) -> Platform
+    def power_connection: (Integer | String id) -> PowerConnection
+    def power_outlet: (Integer | String id) -> PowerOutlet
+    def power_port: (Integer | String id) -> PowerPort
+    def power_port_template: (Integer | String id) -> PowerPortTemplate
+    def rack: (Integer | String id) -> Rack
+    def rack_group: (Integer | String id) -> RackGroup
+    def rack_reservation: (Integer | String id) -> RackReservation
+    def rack_role: (Integer | String id) -> RackRole
+    def rear_port: (Integer | String id) -> RearPort
+    def region: (Integer | String id) -> Region
+    def site: (Integer | String id) -> Site
+    def site_group: (Integer | String id) -> SiteGroup
+    def virtual_chassis: (Integer | String id) -> VirtualChassis
+
+    class Cable
+      include Entity
+    end
+
+    class Cables
+      include Entities[Cable]
+    end
+
+    class CableTermination
+      include Entity
+    end
+
+    class CableTerminations
+      include Entities[CableTermination]
+    end
+
+    class ConsoleConnection
+      include Entity
+    end
+
+    class ConsoleConnections
+      include Entities[ConsoleConnection]
+    end
+
+    class ConsolePort
+      include Entity
+    end
+
+    class ConsolePorts
+      include Entities[ConsolePort]
+    end
+
+    class ConsolePortTemplate
+      include Entity
+
+      def device_type: () -> DeviceType?
+    end
+
+    class ConsolePortTemplates
+      include Entities[ConsolePortTemplate]
+    end
+
+    class ConsoleServerPort
+      include Entity
+    end
+
+    class ConsoleServerPorts
+      include Entities[ConsoleServerPort]
+    end
+
+    class Device
+      include Entity
+
+      def device_type: () -> DeviceType?
+      def device_role: () -> DeviceRole?
+      def tenant: () -> Tenancy::Tenant?
+      def platform: () -> Platform?
+      def site: () -> Site?
+      def rack: () -> Rack?
+      def parent_device: () -> Device?
+      def primary_ip: () -> IPAM::IpAddress?
+      def primary_ip4: () -> IPAM::IpAddress?
+      def primary_ip6: () -> IPAM::IpAddress?
+      def virtual_chassis: () -> VirtualChassis?
+      def tags: () -> Extras::Tags?
+
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def description: () -> String?
+      def description=: (String?) -> String?
+      def serial: () -> String?
+      def serial=: (String?) -> String?
+      def status: () -> untyped
+      def status=: (untyped) -> untyped
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+    end
+
+    class Devices
+      include Entities[Device]
+    end
+
+    class DeviceRole
+      include Entity
+
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+    end
+
+    class DeviceRoles
+      include Entities[DeviceRole]
+    end
+
+    class InterfaceOrdering
+      attr_reader value: untyped
+      attr_reader label: String?
+
+      def initialize: (Hash[String, untyped] raw_data) -> void
+    end
+
+    class DeviceType
+      include Entity
+
+      def manufacturer: () -> Manufacturer?
+      def interface_ordering: () -> InterfaceOrdering?
+      def model: () -> String?
+      def model=: (String?) -> String?
+      def part_number: () -> String?
+      def part_number=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+    end
+
+    class DeviceTypes
+      include Entities[DeviceType]
+    end
+
+    class FrontPort
+      include Entity
+    end
+
+    class FrontPorts
+      include Entities[FrontPort]
+    end
+
+    class Interface
+      include Entity
+
+      def device: () -> Device?
+      def parent: () -> (Interface | Integer | String | Hash[String, untyped])?
+      def parent=: (untyped) -> untyped
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def description: () -> String?
+      def description=: (String?) -> String?
+      def label: () -> String?
+      def label=: (String?) -> String?
+      def enabled: () -> bool?
+      def enabled=: (bool?) -> bool?
+      def mtu: () -> Integer?
+      def mtu=: (Integer?) -> Integer?
+      def mode: () -> String?
+      def mode=: (String?) -> String?
+      def vrf: () -> untyped
+      def vrf=: (untyped) -> untyped
+      def type: () -> untyped
+      def type=: (untyped) -> untyped
+      def untagged_vlan: () -> untyped
+      def untagged_vlan=: (untyped) -> untyped
+      def count_ipaddresses: () -> Integer
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+    end
+
+    class Interfaces
+      include Entities[Interface]
+    end
+
+    class InterfaceConnection
+      include Entity
+    end
+
+    class InterfaceConnections
+      include Entities[InterfaceConnection]
+    end
+
+    class InterfaceTemplate
+      include Entity
+
+      def device_type: () -> DeviceType?
+    end
+
+    class InterfaceTemplates
+      include Entities[InterfaceTemplate]
+    end
+
+    class InventoryItem
+      include Entity
+
+      def device: () -> Device?
+      def manufacturer: () -> Manufacturer?
+      def name: () -> String?
+      def part_id: () -> String?
+      def serial: () -> String?
+    end
+
+    class InventoryItems
+      include Entities[InventoryItem]
+    end
+
+    class Location
+      include Entity
+    end
+
+    class Locations
+      include Entities[Location]
+    end
+
+    class MacAddress
+      include Entity
+
+      def mac_address: () -> String?
+      def mac_address=: (String?) -> String?
+    end
+
+    class MacAddresses
+      include Entities[MacAddress]
+    end
+
+    class Manufacturer
+      include Entity
+
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+    end
+
+    class Manufacturers
+      include Entities[Manufacturer]
+    end
+
+    class Platform
+      include Entity
+
+      def manufacturer: () -> Manufacturer?
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+    end
+
+    class Platforms
+      include Entities[Platform]
+    end
+
+    class PowerConnection
+      include Entity
+    end
+
+    class PowerConnections
+      include Entities[PowerConnection]
+    end
+
+    class PowerOutlet
+      include Entity
+    end
+
+    class PowerOutlets
+      include Entities[PowerOutlet]
+    end
+
+    class PowerPort
+      include Entity
+    end
+
+    class PowerPorts
+      include Entities[PowerPort]
+    end
+
+    class PowerPortTemplate
+      include Entity
+
+      def device_type: () -> DeviceType?
+    end
+
+    class PowerPortTemplates
+      include Entities[PowerPortTemplate]
+    end
+
+    class Rack
+      include Entity
+
+      def site: () -> Site?
+      def group: () -> RackGroup?
+      def tenant: () -> Tenancy::Tenant?
+      def role: () -> RackRole?
+      def name: () -> String?
+      def facility: () -> String?
+    end
+
+    class Racks
+      include Entities[Rack]
+    end
+
+    class RackGroup
+      include Entity
+
+      def site: () -> Site?
+      def name: () -> String?
+      def slug: () -> String?
+    end
+
+    class RackGroups
+      include Entities[RackGroup]
+    end
+
+    class RackReservation
+      include Entity
+
+      def rack: () -> Rack?
+      def user: () -> untyped
+      def tenant: () -> Tenancy::Tenant?
+    end
+
+    class RackReservations
+      include Entities[RackReservation]
+    end
+
+    class RackRole
+      include Entity
+
+      def name: () -> String?
+      def slug: () -> String?
+    end
+
+    class RackRoles
+      include Entities[RackRole]
+    end
+
+    class RearPort
+      include Entity
+    end
+
+    class RearPorts
+      include Entities[RearPort]
+    end
+
+    class Region
+      include Entity
+
+      def parent: () -> Region?
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+      def description: () -> String?
+      def description=: (String?) -> String?
+    end
+
+    class Regions
+      include Entities[Region]
+    end
+
+    class Site
+      include Entity
+
+      def region: () -> Region?
+      def tenant: () -> Tenancy::Tenant?
+      def asns: () -> Array[untyped]?
+      def asns=: (Array[untyped]) -> Array[untyped]
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+      def status: () -> untyped
+      def status=: (untyped) -> untyped
+      def tags: () -> untyped
+      def tags=: (untyped) -> untyped
+      def description: () -> String?
+      def description=: (String?) -> String?
+      def physical_address: () -> String?
+      def shipping_address: () -> String?
+      def facility: () -> String?
+      def time_zone: () -> String?
+      def comments: () -> String?
+      def custom_fields: () -> Hash[String, untyped]?
+      def custom_fields=: (Hash[String, untyped]) -> Hash[String, untyped]
+      def display: () -> String?
+    end
+
+    class Sites
+      include Entities[Site]
+    end
+
+    class SiteGroup
+      include Entity
+
+      def parent: () -> SiteGroup?
+    end
+
+    class SiteGroups
+      include Entities[SiteGroup]
+    end
+
+    class VirtualChassis
+      include Entity
+
+      def master: () -> Device?
+      def name: () -> String?
+      def domain: () -> String?
+    end
+
+    class VirtualChassisList
+      include Entities[VirtualChassis]
+    end
+  end
+end

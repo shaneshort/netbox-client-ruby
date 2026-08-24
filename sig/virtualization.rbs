@@ -1,0 +1,108 @@
+module NetboxClientRuby
+  module Virtualization
+    def self.cluster_groups: () -> ClusterGroups
+    def self.cluster_types: () -> ClusterTypes
+    def self.clusters: () -> Clusters
+    def self.virtual_machines: () -> VirtualMachines
+    def self.interfaces: () -> Interfaces
+
+    def self.cluster_group: (Integer | String id) -> ClusterGroup
+    def self.cluster_type: (Integer | String id) -> ClusterType
+    def self.cluster: (Integer | String id) -> Cluster
+    def self.virtual_machine: (Integer | String id) -> VirtualMachine
+    def self.interface: (Integer | String id) -> Interface
+
+    def cluster_groups: () -> ClusterGroups
+    def cluster_types: () -> ClusterTypes
+    def clusters: () -> Clusters
+    def virtual_machines: () -> VirtualMachines
+    def interfaces: () -> Interfaces
+
+    def cluster_group: (Integer | String id) -> ClusterGroup
+    def cluster_type: (Integer | String id) -> ClusterType
+    def cluster: (Integer | String id) -> Cluster
+    def virtual_machine: (Integer | String id) -> VirtualMachine
+    def interface: (Integer | String id) -> Interface
+
+    class ClusterGroup
+      include Entity
+
+      def name: () -> String?
+      def slug: () -> String?
+    end
+
+    class ClusterGroups
+      include Entities[ClusterGroup]
+    end
+
+    class ClusterType
+      include Entity
+
+      def name: () -> String?
+      def slug: () -> String?
+    end
+
+    class ClusterTypes
+      include Entities[ClusterType]
+    end
+
+    class Cluster
+      include Entity
+
+      def type: () -> ClusterType?
+      def group: () -> ClusterGroup?
+      def site: () -> DCIM::Site?
+      def name: () -> String?
+      def comments: () -> String?
+    end
+
+    class Clusters
+      include Entities[Cluster]
+    end
+
+    class VirtualMachine
+      include Entity
+
+      def cluster: () -> Cluster?
+      def tenant: () -> Tenancy::Tenant?
+      def platform: () -> DCIM::Platform?
+      def primary_ip: () -> IPAM::IpAddress?
+      def primary_ip4: () -> IPAM::IpAddress?
+      def primary_ip6: () -> IPAM::IpAddress?
+      def role: () -> DCIM::DeviceRole?
+      def name: () -> String?
+      def status: () -> ClusterStatus?
+      def vcpus: () -> Integer?
+      def memory: () -> Integer?
+      def disk: () -> Integer?
+      def comments: () -> String?
+    end
+
+    class ClusterStatus
+      attr_reader value: untyped
+      attr_reader label: String?
+
+      def initialize: (Hash[String, untyped] raw_data) -> void
+    end
+
+    class VirtualMachines
+      include Entities[VirtualMachine]
+    end
+
+    class Interface
+      include Entity
+
+      def virtual_machine: () -> VirtualMachine?
+      def name: () -> String?
+      def enabled: () -> bool?
+      def mtu: () -> Integer?
+      def mac_address: () -> String?
+      def description: () -> String?
+      def mode: () -> String?
+    end
+
+    class Interfaces
+      include Entities[Interface]
+    end
+  end
+end

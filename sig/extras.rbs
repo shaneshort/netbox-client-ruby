@@ -1,0 +1,60 @@
+module NetboxClientRuby
+  module Extras
+    def self.config_contexts: () -> ConfigContexts
+    def self.journal_entries: () -> JournalEntries
+    def self.tags: () -> Tags
+
+    def self.config_context: (Integer | String id) -> ConfigContext
+    def self.journal_entry: (Integer | String id) -> JournalEntry
+    def self.tag: (Integer | String id) -> Tag
+
+    def config_contexts: () -> ConfigContexts
+    def journal_entries: () -> JournalEntries
+    def tags: () -> Tags
+
+    def config_context: (Integer | String id) -> ConfigContext
+    def journal_entry: (Integer | String id) -> JournalEntry
+    def tag: (Integer | String id) -> Tag
+
+    class ConfigContext
+      include Entity
+
+      def name: () -> String?
+      def data: () -> untyped
+      def description: () -> String?
+    end
+
+    class ConfigContexts
+      include Entities[ConfigContext]
+    end
+
+    class JournalEntry
+      include Entity
+
+      def assigned_object_id: () -> Integer?
+      def assigned_object_type: () -> String?
+      def comments: () -> String?
+    end
+
+    class JournalEntries
+      include Entities[JournalEntry]
+    end
+
+    class Tag
+      include Entity
+
+      def name: () -> String?
+      def name=: (String?) -> String?
+      def slug: () -> String?
+      def slug=: (String?) -> String?
+      def color: () -> String?
+      def color=: (String?) -> String?
+      def description: () -> String?
+      def description=: (String?) -> String?
+    end
+
+    class Tags
+      include Entities[Tag]
+    end
+  end
+end

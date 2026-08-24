@@ -1,0 +1,128 @@
+module NetboxClientRuby
+  MAX_SIGNED_64BIT_INT: Integer
+
+  def self.circuits: () -> Circuits
+  def self.dcim: () -> DCIM
+  def self.extras: () -> Extras
+  def self.ipam: () -> IPAM
+  def self.secrets: () -> Secrets
+  def self.tenancy: () -> Tenancy
+  def self.virtualization: () -> Virtualization
+  def self.vpn: () -> VPN
+
+  def self.gem_version: () -> Gem::Version
+
+  def self.configure: () { (Config) -> void } -> void
+  def self.config: () -> Config
+
+  module VERSION
+    STRING: String
+  end
+
+  class Config
+    def netbox: () -> NetboxConfig
+    def faraday: () -> FaradayConfig
+  end
+
+  class NetboxConfig
+    attr_accessor api_base_url: String?
+    def auth: () -> AuthConfig
+    def pagination: () -> PaginationConfig
+  end
+
+  class AuthConfig
+    attr_accessor token: String?
+    def rsa_private_key: () -> RSAPrivateKeyConfig
+  end
+
+  class RSAPrivateKeyConfig
+    attr_accessor path: String?
+    attr_accessor password: String?
+  end
+
+  class PaginationConfig
+    attr_accessor default_limit: Integer
+    attr_accessor max_limit: Integer
+  end
+
+  class FaradayConfig
+    attr_accessor adapter: Symbol
+    attr_accessor logger: untyped
+    attr_accessor request_options: Hash[Symbol, untyped]
+    attr_accessor ssl_options: Hash[Symbol, untyped]
+  end
+
+  class Error < StandardError
+  end
+
+  class ClientError < Error
+  end
+
+  class LocalError < Error
+  end
+
+  class RemoteError < Error
+  end
+
+  module Communication
+    def response: (untyped response) -> untyped
+    def connection: () -> NetboxClientRuby::Connection
+  end
+
+  class Connection
+    def get: (String path, ?Hash[Symbol | String, untyped] params) -> untyped
+    def post: (String path, ?Hash[Symbol | String, untyped] params) -> untyped
+    def put: (String path, ?Hash[Symbol | String, untyped] params) -> untyped
+    def patch: (String path, ?Hash[Symbol | String, untyped] params) -> untyped
+    def delete: (String path) -> untyped
+    def url_prefix: () -> String
+  end
+
+  module Entity
+    include Communication
+
+    def initialize: (?untyped given_values) -> void
+    def id: () -> (Integer | String)?
+    def revert: () -> self
+    def reload: () -> self
+    def save: () -> self
+    def create: (untyped raw_data) -> self
+    def delete: () -> self
+    def update: (Hash[Symbol | String, untyped] new_values) -> self
+    def url: () -> String
+    def raw_data!: () -> Hash[String, untyped]
+    def dig: (*untyped keys) -> untyped
+    def []: (String | Symbol name) -> untyped
+    def []=: (String | Symbol name, untyped value) -> untyped
+    def data: () -> Hash[String, untyped]
+    def data=: (Hash[String, untyped]) -> Hash[String, untyped]
+    def dirty_data: () -> Hash[String, untyped]
+    def get: () -> Hash[String, untyped]
+    def get!: () -> self
+    def post: () -> self
+    def patch: () -> self
+    def put: () -> self
+  end
+
+  module Entities[ElementType]
+    include Communication
+    include Enumerable[ElementType]
+
+    def find_by: (Hash[Symbol | String, untyped] attributes) -> ElementType?
+    def filter: (Hash[Symbol | String, untyped] filter) -> self
+    def all: () -> self
+    def limit: (Integer? limit) -> self
+    def offset: (Integer offset) -> self
+    def page: (Integer page) -> self
+    def []: (Integer index) -> ElementType?
+    def each: () { (ElementType) -> void } -> void
+            | () -> Enumerator[ElementType, void]
+    def length: () -> Integer
+    def total: () -> Integer
+    def reload: () -> self
+    def raw_data!: () -> Hash[String, untyped]
+    def get!: () -> self
+    def size: () -> Integer
+    def count: () -> Integer
+  end
+end
